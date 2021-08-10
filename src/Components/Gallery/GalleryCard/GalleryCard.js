@@ -1,7 +1,11 @@
-const GallerCard = () => {
+import React from "react";
+
+const GalleryCard = ({image}) => {
   return(
-    <div/>
+    <div className={`gallery-card`}>
+      <img src={image} alt={}/>
+    </div>
   )
 }
 
-export default GallerCard;
+export default GalleryCard;

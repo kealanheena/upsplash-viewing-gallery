@@ -1,7 +1,14 @@
-const GallerContainer = () => {
+import React from "react";
+import GalleryCard from "../GalleryCard/GalleryCard";
+
+const GalleryContainer = ({images}) => {
   return(
-    <div/>
+    <div className={"gallery-container"}>
+      {images.map((image, index) => 
+        <GalleryCard key={index} image={image}/>
+      )}
+    </div>
   )
 }
 
-export default GallerContainer;
+export default GalleryContainer;
