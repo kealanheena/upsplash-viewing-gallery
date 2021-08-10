@@ -1,9 +1,9 @@
 import './App.css';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      
+      <p>Learn React</p>
     </div>
   );
 }
