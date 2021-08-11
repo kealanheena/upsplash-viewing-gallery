@@ -1,9 +1,9 @@
-import React from "react";
+import './GalleryCard.css'
 
 const GalleryCard = ({image}) => {
   return(
-    <div className={`gallery-card`}>
-      <img src={image} alt={}/>
+    <div>
+      <img className={`gallery-img`} src={image} alt={"new"}/>
     </div>
   )
 }
