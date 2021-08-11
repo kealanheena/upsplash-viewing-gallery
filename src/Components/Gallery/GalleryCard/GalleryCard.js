@@ -1,10 +1,9 @@
 import './GalleryCard.css'
 
-const GalleryCard = ({image, handlePopup}) => {
+const GalleryCard = ({image, index, handlePopup}) => {
   return(
     <div>
-      <img className={"gallery-img"} onClick={() => handlePopup(image)} src={image} alt={"new"}/>
-      <div className="gallery-img-overlay">Image Title</div>
+      <img className={"gallery-img"} onClick={() => handlePopup(image, index)} src={image} alt={"new"}/>
     </div>
   )
 }

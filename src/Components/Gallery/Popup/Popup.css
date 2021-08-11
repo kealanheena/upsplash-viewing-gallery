@@ -36,6 +36,7 @@
 .popup-closing-button {
   color: white;
   font-size: 3rem;
+  padding: 0 4%;
   width: 5%;
   height: 5%;
   align-self: flex-end;

@@ -21,7 +21,7 @@ const GalleryContainer = ({images, handlePopup}) => {
       >
         {images.map((image, index) => 
           <div key={index}>
-            <GalleryCard image={image} handlePopup={handlePopup} />
+            <GalleryCard image={image} index={index} handlePopup={handlePopup} />
           </div>
         )}
       </Masonry>
