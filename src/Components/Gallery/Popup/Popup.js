@@ -4,12 +4,12 @@ const Popup = ({image, handlePopup}) => {
   return(
     <div className={"popup-container"}>
       <div className={"popup-image-container"}>
-        <button 
+        <div 
           className={"popup-closing-button"}
           onClick={() => handlePopup()}
         >
-          X
-        </button>
+          x
+        </div>
         <img className={"popup-image"} src={image} alt={`${image}`}/>
       </div>
     </div>
