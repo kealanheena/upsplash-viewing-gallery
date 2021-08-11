@@ -2,9 +2,9 @@ import GalleryCard from "../GalleryCard/GalleryCard";
 import {Container} from "@material-ui/core";
 import Masonry from "react-masonry-css";
 
-import './GalleryContainer.css'
+import './GalleryContainer.css';
 
-const GalleryContainer = ({images}) => {
+const GalleryContainer = ({images, handlePopup}) => {
 
   const breakpoints = {
     default: 3,
@@ -13,7 +13,7 @@ const GalleryContainer = ({images}) => {
   }
 
   return(
-    <Container>
+    <Container >
       <Masonry
         breakpointCols={breakpoints}
         className={"my-masonry-grid"}
@@ -21,7 +21,7 @@ const GalleryContainer = ({images}) => {
       >
         {images.map((image, index) => 
           <div key={index}>
-            <GalleryCard image={image}/>
+            <GalleryCard image={image} handlePopup={handlePopup} />
           </div>
         )}
       </Masonry>

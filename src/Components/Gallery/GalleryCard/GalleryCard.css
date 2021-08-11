@@ -2,3 +2,10 @@
   border-radius: 8px;
   width: 100%;
 }
+
+.gallery-img:hover {
+  border-radius: 14px;
+  padding: 5px;
+  transition: 0.9s;
+  transform: scale(1.08);
+}
