@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+#### IMPORTANT: You will need to add your ACCESS_KEY into a .env file
+
 ## Available Scripts
 
 In the project directory, you can run:

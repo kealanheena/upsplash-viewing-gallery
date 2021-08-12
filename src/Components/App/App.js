@@ -37,6 +37,12 @@ const App = () => {
     getAllImages()
   }, [])
 
+  if (showModal) {
+    document.body.style.overflow = "hidden"
+  } else {
+    document.body.style.overflow = ""
+  }
+
   return (
     <Container>
       <h1 className={"header"}>Not Pintrest</h1>
@@ -58,6 +64,12 @@ const App = () => {
       : null}
     </Container>
   );
+}
+
+const styles = {
+  scroll: {
+    overflow: "hidden"
+  }
 }
 
 export default App;

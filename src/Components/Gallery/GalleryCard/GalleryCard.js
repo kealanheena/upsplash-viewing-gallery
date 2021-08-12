@@ -1,4 +1,5 @@
 import {useRecoilState} from 'recoil';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import {
   showModal as showModalAtom,
   popupImage as popupImageAtom,
@@ -6,6 +7,7 @@ import {
 } from '../../atoms'
 
 import './GalleryCard.css'
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const GalleryCard = ({image, index}) => {
   const {alt_description, urls, } = image;
@@ -24,15 +26,22 @@ const GalleryCard = ({image, index}) => {
   }
 
   return(
-    <div>
-      <img 
-        className={"gallery-img"} 
-        onClick={() => handlePopup(image, index)} 
-        src={urls.raw} 
+    <div onClick={() => handlePopup(image, index)} >
+      <LazyLoadImage
+        className={"gallery-img"}
+        effect="blur"
         alt={alt_description}
+        src={urls.raw} // use normal <img> attributes as props
       />
     </div>
   )
 }
+
+ // <img 
+      //   className={"gallery-img"} 
+      //   onClick={() => handlePopup(image, index)} 
+      //   src={urls.raw} 
+      //   alt={alt_description}
+      // />
 
 export default GalleryCard;
