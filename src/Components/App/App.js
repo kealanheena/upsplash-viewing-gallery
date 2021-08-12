@@ -66,10 +66,4 @@ const App = () => {
   );
 }
 
-const styles = {
-  scroll: {
-    overflow: "hidden"
-  }
-}
-
 export default App;
