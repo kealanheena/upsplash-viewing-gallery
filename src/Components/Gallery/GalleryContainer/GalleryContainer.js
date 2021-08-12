@@ -4,7 +4,7 @@ import Masonry from "react-masonry-css";
 
 import './GalleryContainer.css';
 
-const GalleryContainer = ({images, handlePopup}) => {
+const GalleryContainer = ({images}) => {
 
   const breakpoints = {
     default: 3,
@@ -21,7 +21,10 @@ const GalleryContainer = ({images, handlePopup}) => {
       >
         {images.map((image, index) => 
           <div key={index}>
-            <GalleryCard image={image} index={index} handlePopup={handlePopup} />
+            <GalleryCard 
+              image={image} 
+              index={index}
+            />
           </div>
         )}
       </Masonry>

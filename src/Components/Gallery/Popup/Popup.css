@@ -19,7 +19,6 @@
 }
 
 .popup-image {
-  /* padding-top: 15%; */
   max-height: 80%;
   max-width: 80%;
   border-radius: 10px;
@@ -41,4 +40,17 @@
   height: 5%;
   align-self: flex-end;
   cursor: pointer;
+}
+
+.popup-sliding-button-container {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+}
+
+.popup-sliding-button {
+  color: white;
+  font-size: 3rem;
+  cursor: pointer;
+  padding: 0 5rem 2rem 5rem;
 }
