@@ -31,17 +31,10 @@ const GalleryCard = ({image, index}) => {
         className={"gallery-img"}
         effect="blur"
         alt={alt_description}
-        src={urls.raw} // use normal <img> attributes as props
+        src={urls.raw}
       />
     </div>
   )
 }
-
- // <img 
-      //   className={"gallery-img"} 
-      //   onClick={() => handlePopup(image, index)} 
-      //   src={urls.raw} 
-      //   alt={alt_description}
-      // />
 
 export default GalleryCard;
