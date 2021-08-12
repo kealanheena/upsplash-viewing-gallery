@@ -14,16 +14,20 @@ const Popup = ({images}) => {
 
   const handleRightArrow = () => {
     if (popupIndex < images.length - 1) {
-      setPopupIndex(popupIndex + 1);
-      setPopupImage(images[popupIndex]);
+      const newPopupIndex = popupIndex + 1;
+      setPopupIndex(newPopupIndex);
+      setPopupImage(images[newPopupIndex]);
     }
+    console.log(popupIndex)
   }
 
   const handleLeftArrow = () => {
     if (popupIndex > 0) {
-      setPopupIndex(popupIndex - 1);
-      setPopupImage(images[popupIndex]);
+      const newPopupIndex = popupIndex - 1;
+      setPopupIndex(newPopupIndex);
+      setPopupImage(images[newPopupIndex]);
     }
+    console.log(popupIndex)
   }
   
   const handlePopup = (url, index) => {
@@ -31,6 +35,7 @@ const Popup = ({images}) => {
 
     setShowModal(!showModal)
     setPopupImage(url)
+    console.log(popupIndex)
   }
 
   return(
