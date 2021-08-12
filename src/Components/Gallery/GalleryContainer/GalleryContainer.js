@@ -20,7 +20,7 @@ const GalleryContainer = ({images}) => {
         columnClassName={"my-masonry-grid_column"}
       >
         {images.map((image, index) => 
-          <div key={index}>
+          <div key={image.id}>
             <GalleryCard 
               image={image} 
               index={index}

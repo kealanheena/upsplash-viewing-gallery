@@ -8,15 +8,19 @@ import {
 import './GalleryCard.css'
 
 const GalleryCard = ({image, index}) => {
-  const [popupImage, setPopupImage] = useRecoilState(popupImageAtom)
-  const [popupIndex, setPopupIndex] = useRecoilState(popupIndexAtom)
+  const {alt_description, urls, } = image;
+
+  const [, setPopupImage] = useRecoilState(popupImageAtom)
+  const [, setPopupIndex] = useRecoilState(popupIndexAtom)
   const [showModal, setShowModal] = useRecoilState(showModalAtom)
   
-  const handlePopup = (url, index) => {
-    if (!showModal) setPopupIndex(index)
+  const handlePopup = (image, index) => {
+    if (!showModal) {
+      setPopupIndex(index)
+      setPopupImage(image)
+    }
 
     setShowModal(!showModal)
-    setPopupImage(url)
   }
 
   return(
@@ -24,8 +28,8 @@ const GalleryCard = ({image, index}) => {
       <img 
         className={"gallery-img"} 
         onClick={() => handlePopup(image, index)} 
-        src={image} 
-        alt={`${image}`}
+        src={urls.raw} 
+        alt={alt_description}
       />
     </div>
   )

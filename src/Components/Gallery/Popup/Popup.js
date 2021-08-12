@@ -4,6 +4,9 @@ import {
   popupImage as popupImageAtom,
   popupIndex as popupIndexAtom
 } from '../../atoms'
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+import FullscreenExitIcon from '@material-ui/icons/FullscreenExit';
 
 import './Popup.css'
 
@@ -18,7 +21,6 @@ const Popup = ({images}) => {
       setPopupIndex(newPopupIndex);
       setPopupImage(images[newPopupIndex]);
     }
-    console.log(popupIndex)
   }
 
   const handleLeftArrow = () => {
@@ -27,15 +29,15 @@ const Popup = ({images}) => {
       setPopupIndex(newPopupIndex);
       setPopupImage(images[newPopupIndex]);
     }
-    console.log(popupIndex)
   }
   
-  const handlePopup = (url, index) => {
-    if (!showModal) setPopupIndex(index)
+  const handlePopup = (image, index) => {
+    if (!showModal) {
+      setPopupIndex(index)
+      setPopupImage(image)
+    }
 
     setShowModal(!showModal)
-    setPopupImage(url)
-    console.log(popupIndex)
   }
 
   return(
@@ -45,21 +47,25 @@ const Popup = ({images}) => {
           className={"popup-closing-button"}
           onClick={() => handlePopup()}
         >
-          x
+          <FullscreenExitIcon />
         </div>
-        <img className={"popup-image"} src={popupImage} alt={`${popupImage}`}/>
+        <img 
+          className={"popup-image"} 
+          src={popupImage.urls.raw} 
+          alt={popupImage.alt_description}
+        />
         <div className={"popup-sliding-button-container"}>
           <div 
             onClick={() => handleLeftArrow()}
             className={"popup-sliding-button"}
           >
-            {'<'}
+            <ArrowBackIcon />
           </div>
           <div 
             onClick={() => handleRightArrow()}
             className={"popup-sliding-button"}
           >
-            {'>'}
+            <ArrowForwardIcon />
           </div>
         </div>
       </div>
